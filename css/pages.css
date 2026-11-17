@@ -1,0 +1,509 @@
+/* ==========================================================================
+   SWIS JEWELS — Page-Specific & Editorial Layout Styles
+   ========================================================================== */
+
+/* ---------- Full-Screen & Editorial Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: calc(var(--header-h) + 3rem);
+  padding-bottom: clamp(4rem, 9vh, 6.5rem);
+  overflow: hidden;
+  background: var(--bg-obsidian);
+}
+
+.hero--compact {
+  min-height: 62svh;
+  padding-bottom: clamp(3rem, 6vh, 4.5rem);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(16, 16, 16, 0.92) 0%, rgba(16, 16, 16, 0.65) 52%, rgba(16, 16, 16, 0.35) 100%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.45) 0%, rgba(23, 23, 23, 0.25) 45%, rgba(23, 23, 23, 0.95) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  color: var(--ivory);
+  opacity: 0.9;
+  max-width: 54ch;
+  margin: 0 0 2.25rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Page Sub-Hero (Collections, About, Gallery, Offers, Contact) */
+.page-banner {
+  padding-top: calc(var(--header-h) + clamp(3rem, 6vw, 4.5rem));
+  padding-bottom: clamp(2.5rem, 5vw, 3.75rem);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(214, 179, 106, 0.1), transparent 52%),
+    var(--bg-obsidian);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.page-banner__title {
+  font-size: var(--text-4xl);
+  margin-bottom: 0.85rem;
+}
+
+.page-banner__lead {
+  font-size: var(--text-lg);
+  color: var(--text-dim);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbs a:hover {
+  color: var(--gold-light);
+}
+
+/* ---------- Split Editorial Feature ---------- */
+.editorial-split {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .editorial-split {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+  .editorial-split--reverse > :first-child {
+    order: 2;
+  }
+}
+
+.editorial-frame {
+  position: relative;
+  border: 1px solid var(--gold-border);
+  background: var(--bg-obsidian);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.editorial-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-frame__note {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  background: rgba(16, 16, 16, 0.86);
+  border: 1px solid var(--gold-border);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.76rem;
+  color: var(--ivory);
+}
+
+/* ---------- SWA DIAMONDS Showcase ---------- */
+.swa-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-obsidian);
+  border-block: 1px solid var(--gold-border);
+}
+
+.swa-grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .swa-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.swa-monogram {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  letter-spacing: 0.34em;
+  color: var(--gold-light);
+  border-bottom: 1px solid var(--gold-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Pillars / Why Choose Grid ---------- */
+.pillars-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pillar-card {
+  padding: 2rem 1.65rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: border-color var(--dur-base) ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--gold-border-strong);
+}
+
+.pillar-card__index {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold-champagne);
+  margin-bottom: 0.9rem;
+  line-height: 1;
+}
+
+.pillar-card__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.pillar-card__text {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Product Details Page ---------- */
+.product-detail-layout {
+  display: grid;
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .product-detail-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.product-gallery__main {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-obsidian);
+  border: 1px solid var(--gold-border);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.product-gallery__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.product-thumb {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  opacity: 0.65;
+  transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.product-thumb.is-active,
+.product-thumb:hover {
+  opacity: 1;
+  border-color: var(--gold-champagne);
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spec-box {
+  margin-block: 1.75rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-sm);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-row__label {
+  color: var(--text-muted);
+}
+
+.spec-row__value {
+  color: var(--ivory);
+  text-align: right;
+}
+
+/* ---------- Gallery Masonry / Editorial Grid ---------- */
+.gallery-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-obsidian);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-luxury);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(16, 16, 16, 0.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.35rem;
+  opacity: 0.92;
+  transition: opacity var(--dur-fast) ease;
+}
+
+.gallery-item__tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-champagne);
+}
+
+.gallery-item__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--white);
+  margin-top: 0.25rem;
+}
+
+/* ---------- Offers / Updates Cards ---------- */
+.promo-card {
+  display: grid;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+@media (min-width: 820px) {
+  .promo-card {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+}
+
+.promo-card__media {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-obsidian);
+  overflow: hidden;
+}
+
+.promo-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-card__body {
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ---------- Contact Page ---------- */
+.contact-layout {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 960px) {
+  .contact-layout {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+}
+
+.contact-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-block: 1.75rem;
+}
+
+.contact-info-item {
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.contact-info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-info-item__label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-champagne);
+  margin-bottom: 0.3rem;
+}
+
+.contact-info-item__value {
+  color: var(--ivory);
+  font-size: var(--text-base);
+}
+
+.map-frame {
+  border: 1px solid var(--gold-border);
+  background: var(--bg-secondary);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  display: block;
+}
+
+/* ---------- Social Grid ---------- */
+.social-strip {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .social-strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.social-tile {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.social-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-luxury);
+}
+
+.social-tile:hover img {
+  transform: scale(1.06);
+}

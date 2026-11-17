@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Visit | SWIS JEWELS – Karathur, Tirur, Kerala</title>
+  <meta name="description" content="Visit SWIS JEWELS in Karathur, Tirur, Kerala, India. View showroom details, directions, WhatsApp enquiry, and send an online enquiry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <main id="main-content">
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Contact &amp; Visit</span>
+        </nav>
+        <span class="eyebrow">Karathur · Tirur · Kerala</span>
+        <h1 class="page-banner__title">Visit Us. Experience the Elegance.</h1>
+        <p class="page-banner__lead">
+          Welcome to SWIS JEWELS in Karathur, Tirur. Connect with our team via WhatsApp, submit an enquiry below, or plan your showroom visit.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Showroom information and enquiry form">
+      <div class="container contact-layout">
+        <!-- Left Column: Brand, Storefront Photo & Details -->
+        <div>
+          <div class="contact-card" style="margin-bottom:2rem;">
+            <div id="contact-brand-logo" style="margin-bottom:1.5rem;"></div>
+
+            <div class="editorial-frame" style="margin-bottom:1.5rem;">
+              <img id="contact-storefront-img" src="assets/images/showroom-exterior-preview.jpg" alt="SWIS JEWELS showroom in Karathur, Tirur, Kerala" loading="lazy" decoding="async">
+              <div class="editorial-frame__note" id="contact-storefront-note" hidden></div>
+            </div>
+
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <div class="contact-info-item__label">Showroom Address</div>
+                <div class="contact-info-item__value" id="contact-address">Karathur, Tirur, Kerala, India</div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-item__label">WhatsApp Consultation</div>
+                <div class="contact-info-item__value" id="contact-whatsapp">Available for private viewings, pricing &amp; bridal enquiries</div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-item__label">Instagram</div>
+                <div class="contact-info-item__value" id="contact-instagram">Instagram Link Placeholder</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:0.85rem;margin-top:1.75rem;">
+              <a id="get-directions-btn" href="https://www.google.com/maps/search/?api=1&query=Karathur+Tirur+Kerala+India" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Get Directions</a>
+              <a href="#" data-wa-link data-wa-message="Hello SWIS JEWELS, I would like directions and showroom timings for your Karathur, Tirur store." target="_blank" rel="noopener noreferrer" class="btn btn--outline">WhatsApp Enquiry</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Enquiry Form -->
+        <div>
+          <div class="contact-card">
+            <span class="eyebrow">Direct Enquiry</span>
+            <h2 class="section-title" style="font-size:var(--text-2xl);">Send a Showroom Enquiry</h2>
+            <p class="text-muted" style="margin-bottom:1.75rem;font-size:0.92rem;">
+              Share the collection or occasion you are looking for. Upon validation, you can send your message directly to our WhatsApp desk.
+            </p>
+
+            <form id="contact-enquiry-form" novalidate>
+              <div class="form-grid form-grid--2">
+                <div class="form-field">
+                  <label for="enquiry-name">Full Name *</label>
+                  <input type="text" id="enquiry-name" name="name" required autocomplete="name" placeholder="Your full name">
+                  <span class="form-error" id="err-name" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label for="enquiry-phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="enquiry-phone" name="phone" required autocomplete="tel" placeholder="Your contact number">
+                  <span class="form-error" id="err-phone" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--2" style="margin-top:1rem;">
+                <div class="form-field">
+                  <label for="enquiry-email">Email (Optional)</label>
+                  <input type="email" id="enquiry-email" name="email" autocomplete="email" placeholder="you@example.com">
+                  <span class="form-error" id="err-email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label for="enquiry-interest">Collection of Interest</label>
+                  <select id="enquiry-interest" name="interest">
+                    <option value="Gold Jewellery">Gold Jewellery</option>
+                    <option value="SWA DIAMONDS">SWA DIAMONDS</option>
+                    <option value="Bridal Collection">Bridal Collection</option>
+                    <option value="Silver & Daily Wear">Silver &amp; Daily Wear</option>
+                    <option value="General Showroom Visit">General Showroom Visit</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field" style="margin-top:1rem;">
+                <label for="enquiry-message">Message / Enquiry Details *</label>
+                <textarea id="enquiry-message" name="message" rows="5" required placeholder="Tell us about the ornament, reference code, or preferred viewing date..."></textarea>
+                <span class="form-error" id="err-message" aria-live="polite"></span>
+              </div>
+
+              <div class="form-status" id="contact-form-status" role="status" aria-live="polite" style="margin-top:1.25rem;"></div>
+
+              <div style="margin-top:1.5rem;">
+                <button type="submit" class="btn btn--gold btn--full">Submit Enquiry</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps Location Slot -->
+    <section class="section section--secondary" aria-labelledby="map-section-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <div>
+            <span class="eyebrow">Showroom Map</span>
+            <h2 class="section-title" id="map-section-heading">Find Us in Karathur, Tirur</h2>
+          </div>
+        </div>
+        <div class="map-frame" id="map-embed-slot"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="js/data/site-config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components/layout.js"></script>
+  <script src="js/pages/contact.js"></script>
+</body>
+</html>
